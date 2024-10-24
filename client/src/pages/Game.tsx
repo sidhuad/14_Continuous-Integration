@@ -2,8 +2,8 @@
 import Word from '../components/Word/index.js';
 import { useEffect, useState } from 'react';
 import { getInitialGameState, checkLetter } from '../utils/gameApi.js';
-import type { GameStart } from '../models/GameStart.js';
-import type { Game } from '../models/Game.js';
+import type { GameStart } from '../models/GameStart';
+import type { Game } from '../models/Game';
 import Keyboard from '../components/Keyboard/index.js';
 import WinLoss from '../components/WinLoss/index.js';
 import Countdown from '../components/Countdown/index.js';
