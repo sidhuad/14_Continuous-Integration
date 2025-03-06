@@ -1,5 +1,5 @@
 import express from 'express';
-
+import path from 'node:path';
 import db from './config/connection.js';
 import routes from './routes/index.js';
 
@@ -13,10 +13,10 @@ app.use(express.json());
 app.use(routes);
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('../client/dist'));
+    app.use(express.static(path.join(process.cwd(), '../client/dist')));
 
   app.get('*', (_req, res) => {
-    res.sendFile('../client/dist/index.html');
+    res.sendFile(path.join(process.cwd(), '../client/dist/index.html'));
   });
 }
 
